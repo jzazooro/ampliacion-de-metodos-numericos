@@ -1,5 +1,7 @@
 # Hay que programar el método de Euler que se usa para resolver ecuaciones diferenciales
+
 import sympy as sp
+
 def euler_method(f, x0, y0, h, n):
     x_values = [x0]
     y_values = [y0]

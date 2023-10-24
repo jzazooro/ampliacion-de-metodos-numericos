@@ -18,24 +18,22 @@ def f(x, y):
 # Lo pongo en practica para resolver la ecuación diferencial y' = (2 - x - y) / (x - y + 4), no tenemos datos sobre h y n asi que me los invento 
 
 n= int(input("Ingrese el valor de n: "))
+h= float(input("Ingrese el valor de h: "))
 
-x0 = int(input("Ingrese el valor de x0: "))
-y0 = int(input("Ingrese el valor de y0: ")) 
-h = ( - x0)/n
+x0 = float(input("Ingrese el valor de x0: "))
+y0 = float(input("Ingrese el valor de y0: "))
 
-x1 = int(input("Ingrese el valor de x1: "))
-y1 = int(input("Ingrese el valor de y1: "))
-h1 = ( - x1)/n
+x1 = float(input("Ingrese el valor de x1: "))
+y1 = float(input("Ingrese el valor de y1: "))
 
-x2 = int(input("Ingrese el valor de x2: "))
-y2 = int(input("Ingrese el valor de y2: "))
-h2 = ( - x2)/n
+x2 = float(input("Ingrese el valor de x2: "))
+y2 = float(input("Ingrese el valor de y2: "))
 
 # Resolver la EDO usando el método de Euler
 
 x_values, y_values = euler_method(f, x0, y0, h, n)
-x1_values, y1_values = euler_method(f, x1, y1, h1, n)
-x2_values, y2_values = euler_method(f, x2, y2, h2, n)
+x1_values, y1_values = euler_method(f, x1, y1, h, n)
+x2_values, y2_values = euler_method(f, x2, y2, h, n)
 
 # Imprimir los resultados
 
@@ -53,3 +51,5 @@ for x, y in zip(x2_values, y2_values):
 import matplotlib.pyplot as plt
 plt.plot(x_values, y_values, x1_values, y1_values, x2_values, y2_values)
 plt.show()
+
+# consejo: poner x0=-2, y0=0, x1= -2, y1= 4, x2= 4, y2= 6, n=100, h=0.1

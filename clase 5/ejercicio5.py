@@ -48,9 +48,8 @@ for x, y in zip(x2_values, y2_values):
     print(f'x = {x:.2f}, y = {y:.6f}')
 
 # Graficar la solución
-
 import matplotlib.pyplot as plt
-plt.plot(x_values, y_values, x1_values, y1_values, x2_values, y2_values)
+plt.plot(x_values, y_values, x1_values, y1_values, x2_values, y2_values, sp.exp(x) * (x + 1)**2 * sp.exp(-x) - 2, sp.exp(x) * (x + 1)**2 * sp.exp(-x) - 1, sp.exp(x) * (x + 1)**2 * sp.exp(-x) - 0.5)
 plt.show()
 
 # consejo: poner x0=0, y0=0.5, x1= 0, y1= 0, x2=0, y2=-1, n=100
